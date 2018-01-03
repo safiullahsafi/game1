@@ -13,17 +13,18 @@ document.addEventListener('click', function(evt){
   }
 
   else if (lastclick) {
-       var btnId=Number(btnValue.textContent);
-       if(btnId===firstChoice)
-         up(btnId);
-       else if(btnId===secondChoice)
-        down(btnId);
-       else if(btnId===thirdChoice)
-        left(btnId);
-       else if(btnId===forthChoice)
-        down(btnId);
-        lastclick=false;
-        options=0;
+
+    var btnID=Number(btnValue.id);
+    if(btnID===firstChoice)
+    up(btnID);
+    else if(btnID===secondChoice)
+    down(btnID);
+    else if(btnID===thirdChoice)
+    left(btnID);
+    else if(btnID===forthChoice)
+    right(btnID);
+    lastclick=false;
+    options=0;
   }
   else {
     firstChoice="";
@@ -82,13 +83,13 @@ document.addEventListener('click', function(evt){
 
     }
 
-   options=0;
+    options=0;
   }
 
 
   function firstfun(){
     if(btnValue.getAttribute('class')==="ball"){
-      btnValue.style.display = "none";
+      btnValue.style.backgroundColor = "grey";
       first++;
 
     }
@@ -101,15 +102,18 @@ document.addEventListener('click', function(evt){
     n+=1;
     var b =document.getElementById(n);
     if(lastclick){
-
-      a.style.display="none";
-      b.style.display="none";
+      btnValue.style.backgroundColor = "#663B22";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "grey";
       clearselection();
+
+
     }
     else {
-      btnValue.style.display="none";
-      a.style.display="none";
-      b.style.display="block";
+      btnValue.style.backgroundColor = "grey";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "#663B22";
+        clearselection();
     }
 
   }
@@ -121,14 +125,17 @@ document.addEventListener('click', function(evt){
     var b =document.getElementById(n);
     if(lastclick){
 
-      a.style.display="none";
-      b.style.display="none";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "grey";
+      btnValue.style.backgroundColor = "#663B22";
       clearselection();
+
     }
     else {
-      btnValue.style.display="none";
-      a.style.display="none";
-      b.style.display="block";
+      btnValue.style.backgroundColor = "grey";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "#663B22";
+        clearselection();
     }
   }
 
@@ -140,14 +147,17 @@ document.addEventListener('click', function(evt){
     var b =document.getElementById(n);
     if(lastclick){
 
-      a.style.display="none";
-      b.style.display="none";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "grey";
+      btnValue.style.backgroundColor = "#663B22";
       clearselection();
+
     }
     else {
-      btnValue.style.display="none";
-      a.style.display="none";
-      b.style.display="block";
+      btnValue.style.backgroundColor = "grey";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "#663B22";
+        clearselection();
     }
   }
   function left(n){
@@ -158,22 +168,23 @@ document.addEventListener('click', function(evt){
     var b =document.getElementById(n);
     if(lastclick){
 
-      a.style.display="none";
-      b.style.display="none";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "grey";
+      btnValue.style.backgroundColor = "#663B22";
       clearselection();
     }
     else {
-      btnValue.style.display="none";
-      a.style.display="none";
-      b.style.display="block";
+      btnValue.style.backgroundColor = "grey";
+      a.style.backgroundColor = "grey";
+      b.style.backgroundColor = "#663B22";
+        clearselection();
     }
   }
 
 
   function selections(bToSelect){
-    document.getElementById(bToSelect).parentElement.style.borderColor = "red";
-    document.getElementById(bToSelect).parentElement.style.color= "grey";
-    document.getElementById(bToSelect).parentElement.textContent = bToSelect;
+    document.getElementById(bToSelect).style.border = "solid";
+    document.getElementById(bToSelect).style.borderColor = "yellow";
 
   };
 
@@ -185,8 +196,8 @@ document.addEventListener('click', function(evt){
     var b =document.getElementById(n);
     if(a!==null && b!==null){
       if(btnValue.className==="ball"){
-        if(b.style.display==="none"){
-          if(a.style.display!=="none"){
+        if(b.style.backgroundColor==="grey"){
+          if(a.style.backgroundColor!=="grey"){
 
             return true;
           }
@@ -204,8 +215,8 @@ document.addEventListener('click', function(evt){
     var b =document.getElementById(n);
     if(a!==null && b!==null){
       if(btnValue.className==="ball"){
-        if(b.style.display==="none"){
-          if(a.style.display!=="none"){
+        if(b.style.backgroundColor==="grey"){
+          if(a.style.backgroundColor!=="grey"){
 
             return true;
 
@@ -224,8 +235,8 @@ document.addEventListener('click', function(evt){
     var b =document.getElementById(n);
     if(a!==null && b!==null){
       if(btnValue.className==="ball"){
-        if(b.style.display==="none"){
-          if(a.style.display!=="none"){
+        if(b.style.backgroundColor==="grey"){
+          if(a.style.backgroundColor!=="grey"){
 
             return true;
           }
@@ -243,8 +254,8 @@ document.addEventListener('click', function(evt){
     var b =document.getElementById(n);
     if(a!==null && b!==null){
       if(btnValue.className==="ball"){
-        if(b.style.display==="none"){
-          if(a.style.display!=="none"){
+        if(b.style.backgroundColor==="grey"){
+          if(a.style.backgroundColor!=="grey"){
 
             return true;
 
@@ -257,9 +268,15 @@ document.addEventListener('click', function(evt){
 
   function clearselection() {
 
-    var elements = document.getElementsByClassName("placeholder");
+    var elements = document.getElementsByClassName("ball");
     for (var i = 0; i < elements.length; i++) {
-      elements[i].style.borderColor = "black";
+         if(elements[i].style.backgroundColor==="grey")
+            elements[i].style.borderColor = "grey";
+            else {
+              elements[i].style.borderColor = "#663B22";
+            }
+
+
     }
 
   }
