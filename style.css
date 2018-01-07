@@ -1,12 +1,102 @@
 
-body{
+@media only screen and (max-width: 360px) {
+  #wrap{
+    margin-left: 110px;
+    margin-top: 50px;
+    width: 110px;
+    color: red;
+    background-color: #C3996C;
+  }
+  .wrapper {
+    display: flex;
+      align-items: center;
+      justify-content: center;
+    margin: 0px auto;
+    width: 212px;
+    height: 212px;
+   border: 5px solid #9B5915;
+    background-color: #C3996C;
+  }
+
+  .placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 2.5px;
+    border-radius: 50%;
+    border: 0.5px solid;
+    background-color: grey;
+  }
+
+  .ring{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 182.5px;
+    height: 182.5px;
+    background-color:  #9B5915;
+
+  }
+  .inner{
+    margin: 0px auto;
+    padding: 0px;
+    width: 162px;
+    height: 162px;
+  }
+  .bordRadius{
+  border-radius: 50%;
+  }
+
+  .row1{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2.5px;
+    margin-left: 47.5px;
+    width: inherit;
+  }
+  .row2{
+    display: flex;
+    flex-direction: row;
+    margin-left: 25.5px;
+    margin-top: 2.5px;
+    width: inherit;
+  }
+  .row3{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2.5px;
+    margin-top: 2.5px;
+    width: inherit;
+  }
+  .ball{
+
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color:#663B22 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
 
 }
+@media only screen and (min-width: 360px) {
+  #wrap{
+    margin-left: 30%;
+    margin-top: 100px;
+    width: 220px;
+    color: red;
+    background-color: #C3996C;
+  }
 .wrapper {
   display: flex;
     align-items: center;
     justify-content: center;
-  margin: 50px auto;
+  margin: 0px auto;
   width: 425px;
   height: 425px;
  border: 10px solid #9B5915;
@@ -75,5 +165,6 @@ border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
+}
 }
