@@ -301,6 +301,6 @@ document.addEventListener('click', function(evt){
 
   }
   wrap=document.getElementById("wrap");
-  wrap.value=count+" ball remain";
+  wrap.value=count+" balls remain";
   wrap.style.color="red";
 });
